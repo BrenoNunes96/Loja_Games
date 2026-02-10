@@ -1,5 +1,7 @@
-import { x } from "vue-router/dist/router-CWoNjPRp.mjs";
+
+import { ConsoleGames } from "../model/ConsoleGames";
 import { Games } from "../model/Games";
+import { PcGames } from "../model/PcGames";
 import { repository } from "../repository/repository";
 import { Input } from "../util/inputs";
 export class controllerGames implements repository{
@@ -10,7 +12,9 @@ gerarId(): number {
 }
 
     listaGames(): void {
-       this.jogos.forEach(x=>x.visualizar())
+      for(let x of this.jogos){
+     x.visualizar()
+      }
     }
 
     public buscarGame(y:number):Games | null{
@@ -30,23 +34,36 @@ gerarId(): number {
     }
     cadastrarGame(x: Games): void {
       this.jogos.push(x)
+  
+      
     }
     atualizarGame(x: number): void {
-    
+     
         let plataformas  = ['pc','console']
         let buscarjogo = this.buscarGame(x)
-         
+          let modes = ['tem mode','nao tem mode']
+          let designs = ['slim','normal']
         if(buscarjogo!==null){
 
        let titulo = Input.question("novo titulo")
         let preco = Input.questionFloat("novo preco")
         let plataforma = Input.keyInSelect(plataformas,"",{cancel:false})+1
-
+    
         
+
             buscarjogo.titulo = titulo
             buscarjogo.preco = preco
-            buscarjogo.plataforma = plataforma
-         
+            buscarjogo.plataforma = plataforma    
+            if (buscarjogo instanceof PcGames){
+                          let mode = Input.keyInSelect(modes,"",{calcel:false})+1
+                          buscarjogo.mod = mode
+
+            }
+             if( buscarjogo instanceof ConsoleGames){
+                let design = Input.keyInSelect(designs,"",{cancel:false})+1
+                buscarjogo.tamanhoDesign = design
+             }
+
 
 
 

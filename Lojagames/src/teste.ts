@@ -10,7 +10,5 @@ testes.cadastrarGame(new PcGames ( testes.gerarId(),'godofwar',234,1,1))
 testes.cadastrarGame(new ConsoleGames ( testes.gerarId(),'ps5',234,2,2))
 
 testes.listaGames()
-testes.atualizarGame(0)
-testes.listaGames()
 }
 main()

@@ -1,6 +1,0 @@
-export funciton Main (){
-
-
-    
-}
-Main()

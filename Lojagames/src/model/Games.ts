@@ -27,20 +27,24 @@ public visualizar ():void{
     switch(this._plataforma){
 case 1:
     plataforma ='PC'
+    break
 case 2:
     plataforma = 'CONSOLE'
-
-
+break
+default:
+    console.log('invalido')
+    }
+    
 console.log(`\n**********************************************`)
 console.log(`DADOS DO JOGO`)
 console.log(`**********************************************`)
 console.log(`Id do game${this._id}`)
 console.log(`titulo do game ${this._titulo}`)
 console.log(`preco do jogo ${this._preco}`)
-console.log(`a plataforma é ${this._plataforma}`)
+console.log(`a plataforma é ${plataforma}`)
 
 }
-}
+
 
     /**
      * Getter id

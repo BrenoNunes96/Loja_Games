@@ -47,6 +47,7 @@ this._mod = mod;
 public visualizar(): void {
  let modInstalado:string= ''
  console.log(this._mod)
+ 
  switch(this._mod){
 case 1:
 modInstalado = 'sim'

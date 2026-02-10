@@ -6,16 +6,26 @@ private _tamanhoDesign : number;
 constructor(id:number,titulo:string,preco:number,plataforma:number,tamanhoDesign:number){
 
 super(id,titulo,preco,plataforma)
-
-this._tamanhoDesign =tamanhoDesign;
+this._tamanhoDesign =tamanhoDesign
 }
 
 
+    /**
+     * Getter tamanhoDesign
+     * @return {number}
+     */
+	public get tamanhoDesign(): number {
+		return this._tamanhoDesign;
+	}
 
-
-
-
-
+    /**
+     * Setter tamanhoDesign
+     * @param {number} value
+     */
+	public set tamanhoDesign(value: number) {
+		this._tamanhoDesign = value;
+	}
+   
 
 
 
@@ -46,7 +56,4 @@ default:
     super.visualizar()
     console.log(`o tamanho do design do console é : ${DesingConsole}`)
 
-
-}
-
-} 
+}}
