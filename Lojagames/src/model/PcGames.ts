@@ -46,19 +46,22 @@ this._mod = mod;
 
 public visualizar(): void {
  let modInstalado:string= ''
- 
+ console.log(this._mod)
  switch(this._mod){
 case 1:
 modInstalado = 'sim'
+break
 case 2:
     modInstalado ='nao'
-
+break
+default :
+console.log('invalido')
  }
  
  
  
     super.visualizar()
-    console.log(`o mod esta instalado ? : ${modInstalado}`)
+    console.log(`o mod esta instalado ? ${modInstalado}`)
 
 
 }

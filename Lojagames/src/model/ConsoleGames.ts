@@ -33,9 +33,12 @@ public visualizar(): void {
  switch(this._tamanhoDesign){
 case 1:
 DesingConsole = 'slim'
+break
 case 2:
     DesingConsole = 'normal'
-
+break
+default:
+    console.log('invalido')
  }
  
  
